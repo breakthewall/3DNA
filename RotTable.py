@@ -1,7 +1,7 @@
 import mathutils
 import math
 
-class Rot_Table:
+class RotTable:
     """Represents the rotation table"""
 
     __ORIGINAL_ROT_TABLE = {\
@@ -40,12 +40,12 @@ class Rot_Table:
     ###################
 
     def getTwist(self, dinucleotide):
-        return Rot_Table.__ORIGINAL_ROT_TABLE[dinucleotide][0]
+        return RotTable.__ORIGINAL_ROT_TABLE[dinucleotide][0]
 
     def getWedge(self, dinucleotide):
-        return Rot_Table.__ORIGINAL_ROT_TABLE[dinucleotide][1]
+        return RotTable.__ORIGINAL_ROT_TABLE[dinucleotide][1]
 
     def getDirection(self, dinucleotide):
-        return Rot_Table.__ORIGINAL_ROT_TABLE[dinucleotide][2]
+        return RotTable.__ORIGINAL_ROT_TABLE[dinucleotide][2]
 
     ###################

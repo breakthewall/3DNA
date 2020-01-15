@@ -1,10 +1,10 @@
-from Rot_Table import *
+from RotTable import *
 from Traj3D import *
 
 
 def main():
 
-	rot_table = Rot_Table()
+	rot_table = RotTable()
 	traj = Traj3D()
 
 	traj.compute("AAAGGATCTTCTTGAGATCCTTTTTTTCTGCGCGTAATCTGCTGCCAGTAAACGAAAAAACCGCCTGGGGAGGCGGTTTAGTCGAAGGTTAAGTCAG", rot_table)
