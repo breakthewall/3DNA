@@ -2,4 +2,4 @@ FROM python
 
 RUN pip install --upgrade pip
 
-RUN pip install mathutils
+RUN pip install mathutils numpy matplotlib
