@@ -25,8 +25,8 @@ class RotTable:
 
     def __init__(self):
         self.__Rot_Table = {}
-        for dinucleotide in Rot_Table.__ORIGINAL_ROT_TABLE:
-            self.__Rot_Table[dinucleotide] = Rot_Table.__ORIGINAL_ROT_TABLE[dinucleotide][:3]
+        for dinucleotide in RotTable.__ORIGINAL_ROT_TABLE:
+            self.__Rot_Table[dinucleotide] = RotTable.__ORIGINAL_ROT_TABLE[dinucleotide][:3]
 
 
 
