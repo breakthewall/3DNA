@@ -23,7 +23,10 @@ def main():
 
     print(traj.getTraj())
 
-    traj.draw("test.png")
+    if args.filename:
+        traj.draw(args.filename+".png")
+    else:
+        traj.draw("sample.png")
 
 
 if __name__ == "__main__" :
