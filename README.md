@@ -9,9 +9,14 @@ Toutes les cellules qui constituent la vie sur Terre comportent en elles une ou 
 Ce modèle ayant été développé pour de courtes séquences d'ADN nu, il ne prend pas en compte toutes les caractéristiques d'une longue chaîne au sein de la cellule (surenroulements, nucléosomes, interactions longue distance...). Par exemple, si on observe un chromosome bactérien (longue séquence d'ADN constituant une bactérie) ou un plasmide (petite séquence présente au sein des bactéries), on s'aperçoit que ce chromosome ou ce plasmide est circulaire, i.e. les deux extrémités ont été "collées" l'une à l'autre. Le modèle pré-cité ne rend pas compte de ce phénomène lorsque l'on représente la trajectoire 3D d'un chromosome bactérien ou d'un plasmide.
 
 ## Énoncé
-L'objectif de ce projet est de modifier le modèle de conformation 3D donné afin de rendre un plasmide circulaire. Pour cela, un algorithme génétique sera développé en Python et structuré en classes (programmation orientée objet).
+L'objectif de ce projet est de modifier le modèle de conformation 3D donné afin de rendre un plasmide circulaire. Pour cela, un algorithme génétique sera développé en Python. Une attention particulière sera portéee à :
 
-Le projet est à réaliser en groupes d'environ cinq personnes.
+- la structuration en classes (programmation orientée objet) ;
+- la rédaction de commentaires ;
+- la généricité de l'algorithme ;
+- les tests unitaires ainsi que leur couverture.
+
+Le projet est à réaliser en groupes de maximum 4 personnes (imposé par l'école).
 
 ## Livrables
 
