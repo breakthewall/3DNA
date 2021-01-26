@@ -9,19 +9,15 @@ Toutes les cellules qui constituent la vie sur Terre comportent en elles une ou 
 Ce modèle ayant été développé pour de courtes séquences d'ADN nu, il ne prend pas en compte toutes les caractéristiques d'une longue chaîne au sein de la cellule (surenroulements, nucléosomes, interactions longue distance...). Par exemple, si on observe un chromosome bactérien (longue séquence d'ADN constituant une bactérie) ou un plasmide (petite séquence présente au sein des bactéries), on s'aperçoit que ce chromosome ou ce plasmide est circulaire, i.e. les deux extrémités ont été "collées" l'une à l'autre. Le modèle pré-cité ne rend pas compte de ce phénomène lorsque l'on représente la trajectoire 3D d'un chromosome bactérien ou d'un plasmide.
 
 ## Énoncé
-L'objectif de ce projet est de modifier le modèle de conformation 3D donné afin de rendre un plasmide circulaire. Pour cela, un algorithme génétique sera développé en Python. Une attention particulière sera portéee à :
-
-- la structuration en classes (programmation orientée objet) ;
-- la rédaction de commentaires ;
-- la généricité de l'algorithme ;
-- les tests unitaires ainsi que leur couverture.
+L'objectif de ce projet est de modifier le modèle de conformation 3D donné afin de rendre un plasmide circulaire. Pour cela, un algorithme génétique sera développé en Python et structuré en classes (programmation orientée objet).
 
 Le projet est à réaliser en groupes de maximum 4 personnes (imposé par l'école).
 
 ## Livrables
 
 - le **code source** du programme avec son manuel utilisateur,
-- un **rapport** décrivant le fonctionnement global de l'algorithme, la structuration du code ainsi que les paramètres choisis et les stratégies mises en place.
+- le **rapport** décrivant le fonctionnement global de l'algorithme, la structuration du code ainsi que les paramètres choisis et les stratégies mises en place,
+- la **soutenance** finale présentant le travail effectué.
 
 ## Évaluation
 
@@ -29,6 +25,8 @@ Seront évalués :
 
 - la pertinence des choix effectués pour concevoir l'algorithme (paramètres, stratégies),
 - la qualité du code (structuration, optimisation, commentaires),
+- la généricité de l'algorithme,
+- les tests unitaires ainsi que leur couverture,
 - les résultats (qualité de la fermeture du chromosome étudié, temps d'exécution moyen...),
 - la qualité et la clarté de la présentation orale du projet.
 
