@@ -4,6 +4,8 @@ import math
 class RotTable:
     """Represents the rotation table"""
 
+    # 3 first values: 3 angle values
+    # 3 last values: SD values
     __ORIGINAL_ROT_TABLE = {\
         "AA": [35.62 , 7.2 , -154 ,      0.06 ,  0.6   , 0],\
         "AC": [34.4  , 1.1 ,  143 ,      1.3  ,  5     , 0],\
