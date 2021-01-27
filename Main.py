@@ -13,11 +13,11 @@ def main():
     traj = Traj3D()
 
     if args.filename:
-	    # Read file
-	    lineList = [line.rstrip('\n') for line in open(args.filename)]
-		# Formatting
-	    seq = ''.join(lineList[1:])
-	    traj.compute(seq, rot_table)
+        # Read file
+        lineList = [line.rstrip('\n') for line in open(args.filename)]
+        # Formatting
+        seq = ''.join(lineList[1:])
+        traj.compute(seq, rot_table)
     else:
         traj.compute("AAAGGATCTTCTTGAGATCCTTTTTTTCTGCGCGTAATCTGCTGCCAGTAAACGAAAAAACCGCCTGGGGAGGCGGTTTAGTCGAAGGTTAAGTCAG", rot_table)
 
