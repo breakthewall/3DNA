@@ -1,19 +1,19 @@
 ## INSTALL
-#### Docker
+### Docker
 Install first [Docker](https://docs.docker.com/get-docker/)
 
 Then, run: `docker build -t 3dna .`
 
-#### Conda
+### Conda
 Install first [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
 Then, run: `conda env create -f environment.yml`
 
 ## RUN
-#### Docker
+### Docker
 `docker run --rm -v $PWD:$PWD -w $PWD 3dna python Main.py`
 
-#### Conda
+### Conda
 `conda run -n 3dna python Main.py`
 
 or
