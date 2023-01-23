@@ -8,6 +8,7 @@ import math
 #For drawing
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 
 class Traj3D:
@@ -19,7 +20,7 @@ class Traj3D:
     def __init__(self):
         self.__Traj3D = {}
         self.fig = plt.figure()
-        self.ax = self.fig.add_subplot(111, projection='3d')
+        self.ax = self.fig.gca(projection='3d')
 
     def getTraj(self):
         return self.__Traj3D
