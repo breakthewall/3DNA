@@ -20,7 +20,7 @@ class Traj3D:
     def __init__(self):
         self.__Traj3D = {}
         self.fig = plt.figure()
-        self.ax = self.fig.gca(projection='3d')
+        self.ax = plt.axes(projection='3d')
 
     def getTraj(self):
         return self.__Traj3D
