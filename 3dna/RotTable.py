@@ -29,16 +29,16 @@ class RotTable:
     ###################
     # READING METHODS #
     ###################
-    def getTwist(self, dinucleotide: str):
+    def getTwist(self, dinucleotide: str) -> float:
         return self.getTable()[dinucleotide][0]
 
-    def getWedge(self, dinucleotide: str):
+    def getWedge(self, dinucleotide: str) -> float:
         return self.getTable()[dinucleotide][1]
 
-    def getDirection(self, dinucleotide: str):
+    def getDirection(self, dinucleotide: str) -> float:
         return self.getTable()[dinucleotide][2]
     
-    def getTable(self):
+    def getTable(self) -> dict:
         return self.rot_table
 
     ###################

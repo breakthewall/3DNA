@@ -9,6 +9,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+from .RotTable import RotTable
 
 
 class Traj3D:
@@ -22,10 +23,10 @@ class Traj3D:
         self.fig = plt.figure()
         self.ax = plt.axes(projection='3d')
 
-    def getTraj(self):
+    def getTraj(self) -> dict:
         return self.__Traj3D
 
-    def compute(self, dna_seq, rot_table):
+    def compute(self, dna_seq: str, rot_table: RotTable):
 
         # Matrice cumulant l'ensemble des transformations géométriques engendrées par la séquence d'ADN
         total_matrix = Matrix()
@@ -72,5 +73,5 @@ class Traj3D:
         self.ax.plot(x,y,z)
         plt.show()
 
-    def write(self, filename):
+    def write(self, filename: str):
         self.fig.savefig(filename)
