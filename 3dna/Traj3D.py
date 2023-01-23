@@ -43,20 +43,30 @@ class Traj3D:
             # On remplit au fur et à mesure les matrices de rotation
             if dinucleotide not in matrices_Rz:
                 matrices_Rz[dinucleotide] = Matrix.Rotation(
-                    math.radians(rot_table.getTwist(dinucleotide)/2), 4, 'Z'
+                    math.radians(rot_table.getTwist(dinucleotide)/2),
+                    4,
+                    'Z'
                 )
                 matrices_Q[dinucleotide] = \
                     Matrix.Rotation(
-                        math.radians((rot_table.getDirection(dinucleotide)-90)), 4, 'Z'
+                        math.radians((rot_table.getDirection(dinucleotide)-90)),
+                        4,
+                        'Z'
                     ) \
                     @ Matrix.Rotation(
-                        math.radians((-rot_table.getWedge(dinucleotide))), 4, 'X'
+                        math.radians((-rot_table.getWedge(dinucleotide))),
+                        4,
+                        'X'
                     ) \
                     @ Matrix.Rotation(
-                        math.radians((90-rot_table.getDirection(dinucleotide))), 4, 'Z'
+                        math.radians((90-rot_table.getDirection(dinucleotide))),
+                        4,
+                        'Z'
                     )
 
-            # On calcule les transformations géométriques selon le dinucleotide courant, et on les ajoute à la matrice totale
+            # On calcule les transformations géométriques
+            # selon le dinucleotide courant,
+            # et on les ajoute à la matrice totale
             total_matrix @= \
                 self.__MATRIX_T \
                 @ matrices_Rz[dinucleotide] \
@@ -64,7 +74,9 @@ class Traj3D:
                 @ matrices_Rz[dinucleotide] \
                 @ self.__MATRIX_T
 
-            # On calcule la position du nucléotide courant en appliquant toutes les transformations géométriques à la position du premier nucléotide
+            # On calcule la position du nucléotide courant
+            # en appliquant toutes les transformations géométriques
+            # à la position du premier nucléotide
             self.__Traj3D.append(total_matrix @ self.__Traj3D[0])
 
     def draw(self):
