@@ -20,7 +20,7 @@ def main():
 
     print(traj.getTraj())
 
-    traj.draw()
+    # traj.draw()
     traj.write(args.filename+".png")
 
 
