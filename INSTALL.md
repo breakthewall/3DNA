@@ -7,13 +7,15 @@ On macOS and Linux:
 
 
 On Windows:
-1. open a PowerShell and run:
+   1. open a PowerShell and run:
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://icon-library.com/images/play-icon-white-png/play-icon-white-png-26.jpg" alt="Run" height="20"/> `wsl --update`
-2. Restart your computer
-3. Run Docker Desktop
+   
+   2. Restart your computer
 
-Then,
+   3. Run Docker Desktop
+
+   Then,
 <!---
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.nicepng.com/png/full/506-5068487_open-install-png-logo.png" alt="Install" height="20"/> `docker build -t 3dna .`
 -->
