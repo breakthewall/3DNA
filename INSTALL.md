@@ -3,7 +3,8 @@
 
 On Windows,
 1. open a PowerShell and run:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://icon-library.com/images/play-icon-white-png/play-icon-white-png-26.jpg" alt="Run" height="20"/> `wsl --update`
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://icon-library.com/images/play-icon-white-png/play-icon-white-png-26.jpg" alt="Run" height="20"/> `wsl --update`
 2. Restart your computer
 3. Run Docker Desktop
 
