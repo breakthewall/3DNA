@@ -9,7 +9,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from .RotTable import RotTable
+from RotTable import RotTable
 
 
 class Traj3D:

@@ -1,5 +1,5 @@
-from .RotTable import RotTable
-from .Traj3D import Traj3D
+from RotTable import RotTable
+from Traj3D import Traj3D
 
 import argparse
 parser = argparse.ArgumentParser()

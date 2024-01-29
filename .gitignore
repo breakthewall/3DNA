@@ -2,3 +2,4 @@ __pycache__
 *.pyc
 *.png
 .DS_Store
+.idea
