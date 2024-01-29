@@ -18,7 +18,7 @@ def main():
     seq = ''.join(lineList[1:])
     traj.compute(seq, rot_table)
 
-    print(traj.getTraj())
+    # print(traj.getTraj())
 
     traj.draw()
     traj.write(args.filename+".png")
