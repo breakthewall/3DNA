@@ -13,7 +13,7 @@ Ce modèle ayant été développé pour de courtes séquences d'ADN nu, il ne pr
 ## Énoncé
 L'objectif de ce projet est de modifier le modèle de conformation 3D donné afin de rendre un plasmide circulaire. Pour cela, un algorithme génétique sera développé. Cet algorithme sera implanté en Python et structuré en classes (programmation orientée objet).
 
-Le projet est à réaliser en groupes de maximum 5 personnes.
+Le projet est à réaliser en groupes de 4 ou 5 personnes.
 
 ## Livrables
 
