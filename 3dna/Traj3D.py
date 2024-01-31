@@ -11,10 +11,12 @@ class Traj3D:
     """Represents a 3D trajectory"""
 
     # Vertical translation (elevation) between two di-nucleotides
-    __MATRIX_T = np.array([[1, 0, 0, 0],
-                       [0, 1, 0, 0],
-                       [0, 0, 1, 3.38/2.0],
-                       [0, 0, 0, 1]])
+    __MATRIX_T = np.array(
+        [[1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 1, -3.38/2],
+        [0, 0, 0, 1]]
+    )
 
     def __init__(self):
         self.__Traj3D = {}
@@ -40,30 +42,31 @@ class Traj3D:
             dinucleotide = dna_seq[i-1]+dna_seq[i]
             # On remplit au fur et à mesure les matrices de rotation
             if dinucleotide not in matrices_Rz:
-                theta = math.radians(rot_table.getTwist(dinucleotide)/2)
+                Omega = math.radians(rot_table.getTwist(dinucleotide))
                 # Create rotation matrix of theta on Z axis
                 matrices_Rz[dinucleotide] = \
-                    np.array([[math.cos(theta), -math.sin(theta), 0, 0],
-                              [math.sin(theta), math.cos(theta), 0, 0],
+                    np.array([[math.cos(Omega/2), math.sin(Omega/2), 0, 0],
+                              [-math.sin(Omega/2), math.cos(Omega/2), 0, 0],
                               [0, 0, 1, 0],
                               [0, 0, 0, 1]])
-
-                alpha = math.radians((rot_table.getWedge(dinucleotide)))
-                beta = math.radians((rot_table.getDirection(dinucleotide)-90))
+                sigma = rot_table.getWedge(dinucleotide)
+                delta = rot_table.getDirection(dinucleotide)
+                alpha = math.radians(sigma)
+                beta = math.radians(delta - 90)
                 # Rotate of -beta on Z axis
                 # Rotate of -alpha on X axis
                 # Rotate of beta on Z axis
                 matrices_Q[dinucleotide] = \
-                    np.array([[math.cos(-beta), -math.sin(-beta), 0, 0],
-                              [math.sin(-beta), math.cos(-beta), 0, 0],
+                    np.array([[math.cos(-beta), math.sin(-beta), 0, 0],
+                              [-math.sin(-beta), math.cos(-beta), 0, 0],
                               [0, 0, 1, 0],
                               [0, 0, 0, 1]]) \
                     @ np.array([[1, 0, 0, 0],
-                                 [0, math.cos(-alpha), -math.sin(-alpha), 0],
-                                 [0, math.sin(-alpha), math.cos(-alpha), 0],
+                                 [0, math.cos(-alpha), math.sin(-alpha), 0],
+                                 [0, -math.sin(-alpha), math.cos(-alpha), 0],
                                  [0, 0, 0, 1]]) \
-                    @ np.array([[math.cos(beta), -math.sin(beta), 0, 0],
-                              [math.sin(beta), math.cos(beta), 0, 0],
+                    @ np.array([[math.cos(beta), math.sin(beta), 0, 0],
+                              [-math.sin(beta), math.cos(beta), 0, 0],
                               [0, 0, 1, 0],
                               [0, 0, 0, 1]])
 
