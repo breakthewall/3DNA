@@ -42,33 +42,8 @@ class Traj3D:
             dinucleotide = dna_seq[i-1]+dna_seq[i]
             # On remplit au fur et à mesure les matrices de rotation
             if dinucleotide not in matrices_Rz:
-                Omega = math.radians(rot_table.getTwist(dinucleotide))
-                # Create rotation matrix of theta on Z axis
-                matrices_Rz[dinucleotide] = \
-                    np.array([[math.cos(Omega/2), math.sin(Omega/2), 0, 0],
-                              [-math.sin(Omega/2), math.cos(Omega/2), 0, 0],
-                              [0, 0, 1, 0],
-                              [0, 0, 0, 1]])
-                sigma = rot_table.getWedge(dinucleotide)
-                delta = rot_table.getDirection(dinucleotide)
-                alpha = math.radians(sigma)
-                beta = math.radians(delta - 90)
-                # Rotate of -beta on Z axis
-                # Rotate of -alpha on X axis
-                # Rotate of beta on Z axis
-                matrices_Q[dinucleotide] = \
-                    np.array([[math.cos(-beta), math.sin(-beta), 0, 0],
-                              [-math.sin(-beta), math.cos(-beta), 0, 0],
-                              [0, 0, 1, 0],
-                              [0, 0, 0, 1]]) \
-                    @ np.array([[1, 0, 0, 0],
-                                 [0, math.cos(-alpha), math.sin(-alpha), 0],
-                                 [0, -math.sin(-alpha), math.cos(-alpha), 0],
-                                 [0, 0, 0, 1]]) \
-                    @ np.array([[math.cos(beta), math.sin(beta), 0, 0],
-                              [-math.sin(beta), math.cos(beta), 0, 0],
-                              [0, 0, 1, 0],
-                              [0, 0, 0, 1]])
+                matrices_Rz[dinucleotide], matrices_Q[dinucleotide] = \
+                    self.__compute_matrices(rot_table, dinucleotide)
 
             # On calcule les transformations géométriques
             # selon le dinucleotide courant,
@@ -85,6 +60,39 @@ class Traj3D:
             # en appliquant toutes les transformations géométriques
             # à la position du premier nucléotide
             self.__Traj3D.append(total_matrix @ self.__Traj3D[0])
+
+    def __compute_matrices(self, rot_table: RotTable, dinucleotide: str):
+
+        Omega = math.radians(rot_table.getTwist(dinucleotide))
+        # Create rotation matrix of theta on Z axis
+        matrices_Rz = \
+            np.array([[math.cos(Omega/2), math.sin(Omega/2), 0, 0],
+                        [-math.sin(Omega/2), math.cos(Omega/2), 0, 0],
+                        [0, 0, 1, 0],
+                        [0, 0, 0, 1]])
+
+        sigma = rot_table.getWedge(dinucleotide)
+        delta = rot_table.getDirection(dinucleotide)
+        alpha = math.radians(sigma)
+        beta = math.radians(delta - 90)
+        # Rotate of -beta on Z axis
+        # Rotate of -alpha on X axis
+        # Rotate of beta on Z axis
+        matrices_Q = \
+            np.array([[math.cos(-beta), math.sin(-beta), 0, 0],
+                        [-math.sin(-beta), math.cos(-beta), 0, 0],
+                        [0, 0, 1, 0],
+                        [0, 0, 0, 1]]) \
+            @ np.array([[1, 0, 0, 0],
+                            [0, math.cos(-alpha), math.sin(-alpha), 0],
+                            [0, -math.sin(-alpha), math.cos(-alpha), 0],
+                            [0, 0, 0, 1]]) \
+            @ np.array([[math.cos(beta), math.sin(beta), 0, 0],
+                        [-math.sin(beta), math.cos(beta), 0, 0],
+                        [0, 0, 1, 0],
+                        [0, 0, 0, 1]])
+        
+        return matrices_Rz, matrices_Q
 
     def draw(self):
         xyz = np.array(self.__Traj3D)
