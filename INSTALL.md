@@ -19,6 +19,14 @@
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://icon-library.com/images/play-icon-white-png/play-icon-white-png-26.jpg" alt="Run" height="20"/> `docker run --rm -v <absolute_path_with_/_instead_of_\>:/3dna joan/3dna bash -c 'cd /3dna ; python -m 3dna data/plasmid_8k.fasta'`
 
+**On ARM64 (Apple silicon)**
+   1. Build a new Docker image:
+
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://icon-library.com/images/play-icon-white-png/play-icon-white-png-26.jpg" alt="Run" height="20"/> `docker build -t 3dna .`
+
+   2. Run the new image:
+&nbsp;<img src="https://icon-library.com/images/play-icon-white-png/play-icon-white-png-26.jpg" alt="Run" height="20"/> `docker run --rm -v $PWD:$PWD -w $PWD 3dna python -m 3dna data/plasmid_8k.fasta`
+
 <br/>
 <br/>
 
