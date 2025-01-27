@@ -9,8 +9,8 @@ from os import (
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("filename", help="Input filename of DNA sequence")
-parser.add_argument("--save-traj", help="Output filename (.csv) of DNA 3D trajectory", action="store_true")
-parser.add_argument("--save-fig", help="Output filename (.png) of DNA 3D figure", action="store_true")
+parser.add_argument("--save-traj", help="Save the DNA 3D trajectory", action="store_true")
+parser.add_argument("--save-fig", help="Save the figure of the DNA 3D trajectory", action="store_true")
 parser.add_argument("--draw", help="Draw the DNA 3D trajectory", action="store_true")
 parser.parse_args()
 args = parser.parse_args()
