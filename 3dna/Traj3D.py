@@ -19,11 +19,11 @@ class Traj3D:
     )
 
     def __init__(self):
-        self.__Traj3D = {}
+        self.__Traj3D = []
         self.fig = plt.figure()
         self.ax = plt.axes(projection='3d')
 
-    def getTraj(self) -> dict:
+    def getTraj(self) -> list:
         return self.__Traj3D
 
     def compute(self, dna_seq: str, rot_table: RotTable):
@@ -100,5 +100,11 @@ class Traj3D:
         self.ax.plot(x,y,z)
         plt.show()
 
-    def write(self, filename: str):
+    def save_fig(self, filename: str):
         self.fig.savefig(filename)
+
+    def save_coord(self, filename: str):
+        with open(filename, 'w') as f:
+            for i in range(len(self.__Traj3D)):
+                f.write(f"{self.__Traj3D[i][0]},{self.__Traj3D[i][1]},{self.__Traj3D[i][2]}\n")
+            f.close()
