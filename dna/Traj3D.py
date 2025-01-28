@@ -103,7 +103,7 @@ class Traj3D:
     def save_fig(self, filename: str):
         self.fig.savefig(filename)
 
-    def save_coord(self, filename: str):
+    def save_coords(self, filename: str):
         with open(filename, 'w') as f:
             for i in range(len(self.__Traj3D)):
                 f.write(f"{self.__Traj3D[i][0]},{self.__Traj3D[i][1]},{self.__Traj3D[i][2]}\n")

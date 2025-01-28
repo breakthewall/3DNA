@@ -34,7 +34,7 @@ def main():
 
     # Save the trajectory
     if args.save_traj:
-        traj.save_coord(
+        traj.save_coords(
             os_path.join(working_dir, basename + ".csv")
         )
     else:
