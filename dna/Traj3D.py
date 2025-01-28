@@ -4,7 +4,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from .RotTable import RotTable
+from dna.RotTable import RotTable
 
 
 class Traj3D:

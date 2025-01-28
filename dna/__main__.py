@@ -1,10 +1,12 @@
-from .RotTable import RotTable
-from .Traj3D import Traj3D
+from dna.RotTable import RotTable
+from dna.Traj3D import Traj3D
 
 from os import (
     path as os_path,
     getcwd as os_getcwd
 )
+
+here = os_path.abspath(os_path.dirname(__file__))
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -12,12 +14,13 @@ parser.add_argument("filename", help="Input filename of DNA sequence")
 parser.add_argument("--save-traj", help="Save the DNA 3D trajectory", action="store_true")
 parser.add_argument("--save-fig", help="Save the figure of the DNA 3D trajectory", action="store_true")
 parser.add_argument("--draw", help="Draw the DNA 3D trajectory", action="store_true")
+parser.add_argument("--rot-table", help="Input filename of rotation table", default=os_path.join(here, "table.json"))
 parser.parse_args()
 args = parser.parse_args()
 
 def main():
 
-    rot_table = RotTable()
+    rot_table = RotTable(args.rot_table)
     traj = Traj3D()
 
     # Read file

@@ -1,7 +1,6 @@
 from json import load as json_load
-from os import path as os_path
+from json import dump as json_dump
 
-here = os_path.abspath(os_path.dirname(__file__))
 
 class RotTable:
     """Represents a rotation table"""
@@ -9,9 +8,7 @@ class RotTable:
     # 3 first values: 3 angle values
     # 3 last values: SD values
 
-    def __init__(self, filename: str = None):
-        if filename is None:
-            filename = os_path.join(here, 'table.json')
+    def __init__(self, filename: str):
         self.rot_table = json_load(open(filename))
 
     ###################
@@ -42,3 +39,7 @@ class RotTable:
         return self.rot_table
 
     ###################
+    def save(self, filename: str):
+        """Saves the current rotation table to a file."""
+        with open(filename, 'w') as file:
+            json_dump(self.rot_table, file)
