@@ -42,5 +42,5 @@ Sont fournis :
 - le fichier <tt>Rot_Table.py</tt> contenant la table de rotations (avec les écart-types) nécessaires au calcul d'une trajectoire 3D,
 - le fichier <tt>Main.py</tt> illustrant un exemple d'utilisation de la classe Traj3D,
 - deux fichiers <tt>.fasta</tt> contenant les séquences de deux plasmides de longueur différente (8 000 dans un cas et 180 000 dans l'autre).
-- Exécution : <code>python -m 3dna --help</code>
+- Exécution : <code>python -m dna --help</code>
 
