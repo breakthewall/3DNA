@@ -29,7 +29,6 @@ Seront évalués :
 
 - la pertinence des choix effectués pour concevoir l'algorithme (paramètres, stratégies),
 - la qualité du code (structuration, optimisation, commentaires),
-- la généricité de l'algorithme,
 - les tests unitaires ainsi que leur couverture,
 - les résultats (qualité de la fermeture du chromosome étudié, temps d'exécution moyen...),
 - la qualité et la clarté de la présentation orale du projet.
